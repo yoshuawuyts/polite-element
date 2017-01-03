@@ -13,7 +13,7 @@ var html = require('bel')
 
 var main = html`
   <main>
-    ${polite(basicRender, renderFancy)()}
+    ${polite(renderBasic, renderFancy)()}
   </main>
 `
 document.body.appendChild(main)
