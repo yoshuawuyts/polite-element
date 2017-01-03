@@ -1,0 +1,29 @@
+{
+  "name": "polite-element",
+  "version": "1.0.0",
+  "description": "Wait to render until a the browser has less load",
+  "main": "index.js",
+  "scripts": {
+    "deps": "dependency-check . && dependency-check . --extra --no-dev",
+    "test": "standard && npm run deps && NODE_ENV=test node test",
+    "test:cov": "standard && npm run deps && NODE_ENV=test istanbul cover test.js"
+  },
+  "repository": "yoshuawuyts/polite-element",
+  "keywords": [
+    "requestIdleCallback",
+    "element",
+    "browser",
+    "HTML"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "global": "^4.3.1"
+  },
+  "devDependencies": {
+    "bel": "^4.5.1",
+    "dependency-check": "^2.7.0",
+    "istanbul": "^0.4.5",
+    "standard": "^8.6.0",
+    "tape": "^4.6.3"
+  }
+}
