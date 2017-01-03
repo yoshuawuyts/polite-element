@@ -11,12 +11,12 @@ applications that don't block user interaction.
 var polite = require('polite-element')
 var html = require('bel')
 
-var el = html`
+var main = html`
   <main>
-    ${polite(basicRender, renderFancy)}
+    ${polite(basicRender, renderFancy)()}
   </main>
 `
-document.body.appendChild(el)
+document.body.appendChild(main)
 
 function renderBasic () {
   return html`
