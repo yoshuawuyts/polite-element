@@ -8,7 +8,7 @@ function politeElement (renderBasic, renderFancy) {
   assert.equal(typeof renderFancy, 'function', 'polite-element: renderFancy should be a function')
 
   var hasIdleCallback = (typeof window.requestIdleCallback !== 'undefined')
-  var isServer = (typeof process !== 'undefined')
+  var isServer = (!window.document)
 
   var parentNode = null
   var prevEl = null
