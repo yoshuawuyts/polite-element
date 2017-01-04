@@ -1,6 +1,6 @@
 {
   "name": "polite-element",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Wait to render until the browser has less load",
   "main": "index.js",
   "scripts": {
