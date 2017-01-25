@@ -21,9 +21,9 @@ function politeElement (renderBasic, renderFancy) {
       prevEl = el
       el = renderFancy()
 
-      var elType = el.nodeType
-      var prevElType = prevEl.nodeType
-      assert.equal(elType, prevElType, 'polite-element: the root elements of the old and new tree should be the same type')
+      var elName = el.nodeName
+      var prevElName = prevEl.nodeName
+      assert.equal(elName, prevElName, 'polite-element: the root elements of the old and new tree should be the same type')
 
       window.requestAnimationFrame(function () {
         if (el.parentNode) return
