@@ -1,4 +1,5 @@
 var window = require('global/window')
+var morph = require('nanomorph')
 var assert = require('assert')
 
 module.exports = politeElement
@@ -10,23 +11,23 @@ function politeElement (renderBasic, renderFancy) {
   var hasIdleCallback = (typeof window.requestIdleCallback !== 'undefined')
   var isServer = (!window.document)
 
-  var parentNode = null
   var prevEl = null
-
   var el = (isServer || hasIdleCallback)
     ? renderBasic()
     : renderFancy()
 
   if (hasIdleCallback) {
     window.requestIdleCallback(function () {
-      parentNode = el.parentNode
       prevEl = el
       el = renderFancy()
 
+      var elName = el.nodeName
+      var prevElName = prevEl.nodeName
+      assert.equal(elName, prevElName, 'polite-element: the root elements of the old and new tree should be the same type')
+
       window.requestAnimationFrame(function () {
         if (el.parentNode) return
-        if (!parentNode) return
-        parentNode.replaceChild(el, prevEl)
+        morph(el, prevEl)
       })
     })
   }
