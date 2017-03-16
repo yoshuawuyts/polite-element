@@ -27,7 +27,7 @@ function politeElement (renderBasic, renderFancy) {
 
       window.requestAnimationFrame(function () {
         if (el.parentNode) return
-        morph(el, prevEl)
+        morph(prevEl, el)
       })
     })
   }
