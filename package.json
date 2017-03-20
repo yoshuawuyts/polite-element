@@ -19,7 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "global": "^4.3.1",
-    "nanomorph": "^2.1.3"
+    "nanomorph": "^4.0.0"
   },
   "devDependencies": {
     "bankai": "^5.2.1",
